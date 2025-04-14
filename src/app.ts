@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 const app = express();
 
-// Routes  imports
+// Routes imports
 import subcategoryRouter from "./api/routes/subcategory.route";
 import categoryRouter from "./api/routes/category.route";
 import todosRoute from "./api/routes/todos.route";
