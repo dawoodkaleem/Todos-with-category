@@ -77,6 +77,24 @@ export const updateSubcategory = async (
   }
 };
 
+export const getSubcategory_by_id = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const id: string = req.params.subcategoryId;
+
+  SubCategory.findById(id)
+    .exec()
+    .then((docs: any) => {
+      docs.name, id, res.status(200).json(docs);
+    })
+    .catch((err: Response) => {
+      console.log(err);
+      res.status(500).json({ error: err });
+    });
+};
+
 export const deleteSubcategory = (
   req: Request,
   res: Response,

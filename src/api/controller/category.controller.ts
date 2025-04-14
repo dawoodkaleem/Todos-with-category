@@ -105,7 +105,6 @@ export const deleteCategory = (
   next: NextFunction
 ) => {
   const id: string = req.params.categoryId;
-  // const name:string=req.params.name
   Category.deleteOne({ _id: id })
     .exec()
     .then((result: Response) => {
