@@ -46,7 +46,7 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
 });
 router.put("/:Id", (req: Request, res: Response, next: NextFunction) => {
   const id: string = req.params.Id;
-  console.log(req.body.name);
+
   Todos.findByIdAndUpdate(
     req.params.Id,
     { name: req.body.name },
